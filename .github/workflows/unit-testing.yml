@@ -5,7 +5,7 @@ on:
 - pull_request
 
 jobs: 
-  build: 
+  run-unit-test: 
     runs-on: ubuntu-latest
     steps: 
     - uses: actions/checkout@master
