@@ -5,14 +5,17 @@ on:
  - pull_request
  
 jobs:
-  run-cypress-tests:
-    runs-on: ubuntu-latest
+  cypress-run:
+    runs-on: ubuntu-22.04
     steps: 
       - name: Checkout github actions
-        uses: actions/checkout@master
+        uses: actions/checkout@v3
+      
+      - name: Install dependencies
+        run: npm install
         
       - name: Write the cypress file
         run: echo '${{ secrets.CYPRESS_ENV_FILE }}' > cypress.env.json
       
-      - name: Run cypress tests
-        run: cypress-io/github-action@v5
+      - name: Cypress run
+        run: cypress-io/github-actions@v5
