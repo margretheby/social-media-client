@@ -6,10 +6,10 @@ on:
  
 jobs: 
   cypress-run:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps: 
-      - name: Checkout github actions
-        uses: actions/checkout@v3
+      - name: Checkout under $GITHUB_WORKSPACE
+        uses: actions/checkout@main
       
       - name: Install dependencies
         run: npm install
@@ -17,5 +17,7 @@ jobs:
       - name: Write the cypress file
         run: echo '${{ secrets.CYPRESS_ENV_FILE }}' > cypress.env.json
       
-      - name: Cypress run
-        run: cypress-io/github-actions@v5
+      - name: Run cypress tests with electron
+        uses: cypress-io/github-actions@v5
+        with:
+         browser: electron
