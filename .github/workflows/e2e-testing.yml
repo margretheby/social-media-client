@@ -1,10 +1,10 @@
-name: End-to-End Testing
+name: End to End Testing
 
 on: 
  - workflow_dispatch
  - pull_request
  
- jobs: 
+jobs:
   run-cypress-tests:
     runs-on: ubuntu-latest
     steps: 
@@ -12,7 +12,7 @@ on:
         uses: actions/checkout@master
         
       - name: Write the cypress file
-        run: echo ´${{ secrets.CYPRESS_ENV_FILE }}´ > cypress.env.json
+        run: echo '${{ secrets.CYPRESS_ENV_FILE }}' > cypress.env.json
       
       - name: Run cypress tests
-        run: npm run test-e2e
+        run: cypress-io/github-action
