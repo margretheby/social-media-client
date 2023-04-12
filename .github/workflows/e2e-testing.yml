@@ -6,15 +6,13 @@ on:
  
 jobs: 
   cypress-run:
+    name: E2E testing
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout under $GITHUB_WORKSPACE
-        uses: actions/checkout@main
+        uses: actions/checkout@v3
       
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Run cypress tests with electron
+      - name: Cypress.io
         uses: cypress-io/github-actions@v5
         with:
          browser: electron
