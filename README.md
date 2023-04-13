@@ -7,7 +7,9 @@
 
 ## Configurations 
 ### Branch protection
-This repository's ```master``` branch is protected by:
+This repository's ```master``` branch is protected by these rules:
+- Require a pull request before merging
+- Do not allow bypassing the above settings
 
 ### Prettier
 The branch ```workflow-formatting``` is configured with prettier, and prettier is run on ```commit```. Merge this into another branch for it to run on this project.
