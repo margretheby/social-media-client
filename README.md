@@ -12,7 +12,7 @@ This repository's ```master``` branch is protected by these rules:
 - Do not allow bypassing the above settings
 
 ### Prettier
-The branch ```workflow-formatting``` is configured with prettier, and prettier is run on ```commit```. Merge this into another branch for it to run on this project.
+The branch ```workflow-formatting``` is configured with prettier, and prettier is run on ```commit```.
 
 ### ESlint
 The file ```.eslintrc.json``` contains configurations for Cypress End-to-End testing and Jest Unit Testing.
